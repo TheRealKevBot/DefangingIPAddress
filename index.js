@@ -3,7 +3,12 @@
 // A defanged IP address replaces every period "." with "[.]". 
 
 function defangIPaddr(address) {
-    
+    defangIP = []
+    address = address.split('')
+    address.forEach(char => {
+        char === '.' ? defangIP.push('[.]') : defangIP.push(char)
+    })
+    return defangIP.join('')
 }; 
 
 console.log(defangIPaddr('1.1.1.1'))
